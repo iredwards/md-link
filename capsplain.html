@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+  <title>{{docset}} Report</title>
+</head>
+<body>
+<h2>Bad titles</h2>
+  <ul>
+  {% for item in badtitles %}
+  <li>
+  {{ item }}
+  </li>
+  {% endfor %}
+  </ul>
+
+<h2>Complicated tables</h2>
+<table>
+<tbody>
+  {% for key, value in badtables.items() %}
+<tr>
+    <td>{{ key }}</td>
+    <td>{{ value }}</td>
+ </tr>
+  {% endfor %}
+</tbody>
+</table>
+
+<h2>Other skips</h2>
+<p>Anything else, not warnings, or already converted</p>
+<table>
+<tbody>
+  {% for key, value in badskips.items() %}
+<tr>
+    <td>{{ key }}</td>
+    <td>{{ value }}</td>
+ </tr>
+  {% endfor %}
+</tbody>
+</table>
+
+</body>
+</html>
